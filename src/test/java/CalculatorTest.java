@@ -31,5 +31,4 @@ public class CalculatorTest extends BaseTest {
         Assert.assertTrue(actualResult.equals(expectedResult), errorMessage);
     }
 
-
 }
