@@ -66,5 +66,15 @@ public class AngularCalculatorPage {
                 until(ExpectedConditions.visibilityOf(calculationResultList));
         return calculationResult.getText();
     }
-    
+
+    public static String getCalculationResult(WebDriver driver,
+                                              String firstNumber, String secondNumber, String operator) {
+        AngularCalculatorPage angularCalculatorPage = new AngularCalculatorPage(driver);
+        angularCalculatorPage.typeFirstNumberField(firstNumber).
+                typeSecondNumberField(secondNumber).
+                selectOperator(operator).
+                clickGoButton();
+        return angularCalculatorPage.getTextResult();
+    }
+
 }

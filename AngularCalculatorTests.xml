@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="angular calculator testing">
+    <test name="positive tests">
+        <groups>
+            <run>
+                <include name="positive tests"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="CalculatorTest"/>
+        </classes>
+    </test>
+    <test name="negative tests">
+        <groups>
+            <run>
+                <include name="negative tests"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="CalculatorTest"/>
+        </classes>
+    </test>
+</suite>

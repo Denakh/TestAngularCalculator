@@ -9,7 +9,7 @@ import pages.AngularCalculatorPage;
 public class BaseTest {
 
     protected WebDriver driver;
-    AngularCalculatorPage angularCalculatorPage;
+    protected AngularCalculatorPage angularCalculatorPage;
 
     @BeforeMethod(alwaysRun = true)
     public void setUp() throws Exception {
@@ -25,14 +25,6 @@ public class BaseTest {
         driver.close();
     }
 
-    @Test
-    public void testResult() {
-        angularCalculatorPage = new AngularCalculatorPage(driver);
-        angularCalculatorPage.typeFirstNumberField("10").
-                typeSecondNumberField("20").
-                selectOperator("+").
-                clickGoButton();
-        System.out.println(angularCalculatorPage.getTextResult());
-    }
+
 
 }
