@@ -37,21 +37,21 @@ public class AngularCalculatorPage {
         PageFactory.initElements(driver, this);
     }
 
-    @Step("Type first number field by value: {0}")
+    @Step("Type first number field by value: {firstNumber}")
     public AngularCalculatorPage typeFirstNumberField(String firstNumber) {
         Log.LOG.debug("typing first number field by value: " + firstNumber);
         firstNumberField.sendKeys(firstNumber);
         return this;
     }
 
-    @Step("Type second number field by value: {0}")
+    @Step("Type second number field by value: {secondNumber}")
     public AngularCalculatorPage typeSecondNumberField(String secondNumber) {
         Log.LOG.debug("typing second number field by value: " + secondNumber);
         secondNumberField.sendKeys(secondNumber);
         return this;
     }
 
-    @Step("Select operator: {0}")
+    @Step("Select operator: {operator}")
     public AngularCalculatorPage selectOperator(String operator) {
         Log.LOG.debug("selecting operator: " + operator);
         (new Select(operatorSelector)).selectByVisibleText(operator);
