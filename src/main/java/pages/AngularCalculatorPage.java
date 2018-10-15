@@ -1,18 +1,12 @@
 package pages;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 public class AngularCalculatorPage {
 
@@ -61,16 +55,22 @@ public class AngularCalculatorPage {
         return this;
     }
 
+    public AngularCalculatorPage refreshPage() {
+        driver.navigate().refresh();
+        return this;
+    }
+
     public String getTextResult() {
         new WebDriverWait(driver, 10).
                 until(ExpectedConditions.visibilityOf(calculationResultList));
         return calculationResult.getText();
     }
 
-    public static String getCalculationResult(WebDriver driver,
+
+    public static String getCalculationResult(AngularCalculatorPage angularCalculatorPage,
                                               String firstNumber, String secondNumber, String operator) {
-        AngularCalculatorPage angularCalculatorPage = new AngularCalculatorPage(driver);
-        angularCalculatorPage.typeFirstNumberField(firstNumber).
+        angularCalculatorPage.refreshPage().
+                typeFirstNumberField(firstNumber).
                 typeSecondNumberField(secondNumber).
                 selectOperator(operator).
                 clickGoButton();

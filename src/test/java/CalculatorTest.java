@@ -9,7 +9,7 @@ public class CalculatorTest extends BaseTest {
             groups = "positive tests")
     public void testCalculatorPositive(String firstNumber, String secondNumber, String operator, String expectedResult,
                                        String errorMessage) {
-        String actualResult = AngularCalculatorPage.getCalculationResult(driver, firstNumber, secondNumber, operator);
+        String actualResult = AngularCalculatorPage.getCalculationResult(angularCalculatorPage, firstNumber, secondNumber, operator);
         Assert.assertTrue(actualResult.equals(expectedResult), errorMessage);
     }
 
@@ -17,7 +17,7 @@ public class CalculatorTest extends BaseTest {
             groups = "negative tests")
     public void testCalculatorNegative(String firstNumber, String secondNumber, String operator, String expectedResult,
                                        String errorMessage) {
-        String actualResult = AngularCalculatorPage.getCalculationResult(driver, firstNumber, secondNumber, operator);
+        String actualResult = AngularCalculatorPage.getCalculationResult(angularCalculatorPage, firstNumber, secondNumber, operator);
         Assert.assertTrue(actualResult.equals(expectedResult), errorMessage);
     }
 

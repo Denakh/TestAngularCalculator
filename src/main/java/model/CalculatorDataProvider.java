@@ -10,7 +10,7 @@ public class CalculatorDataProvider {
                 {"111", "222", "+", "333", "Error in correct addition result"},
                 {"111", "-222", "+", "-111", "Error in correct addition result"},
                 {"0", "11.1", "+", "11.1", "Error in correct addition result"},
-                {"111", "333", "/", "0,3333333333333333", "Error in correct division result"},
+                {"111", "333", "/", "0.3333333333333333", "Error in correct division result"},
                 {"-33.3", "11.1", "/", "-3", "Error in correct division result"},
                 {"0", "333", "/", "0", "Error in correct division result"},
                 {"11", "33", "*", "363", "Error in correct multiplication result"},
